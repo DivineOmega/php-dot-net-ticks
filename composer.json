@@ -1,6 +1,6 @@
 {
     "name": "divineomega/php-dot-net-ticks",
-    "description": "",
+    "description": "This package helps PHP developers work with and convert .NET ticks, a form of precise time measurement used by the .NET DateTime object.",
     "type": "library",
     "authors": [
         {

@@ -15,16 +15,26 @@ class Ticks
     public function __construct($ticks = null)
     {
         if ($ticks===null) {
-            $this->ticks = $this->currentTimeInTicks();
+            $this->ticks = self::currentTimeInTicks();
             return;
         }
 
         $this->ticks = $ticks;
     }
 
-    private function currentTimeInTicks()
+    public static function createFromTimestamp($timestamp)
     {
-        return ((time() * self::TICKS_TIMESTAMP_MULTIPLIER) + self::EPOCH_OFFSET_IN_TICKS);
+        return new self(self::getTicksFromTimestamp($timestamp));
+    }
+
+    private static function currentTimeInTicks()
+    {
+        return self::getTicksFromTimestamp(time());
+    }
+
+    private static function getTicksFromTimestamp($timestamp)
+    {
+        return (($timestamp * self::TICKS_TIMESTAMP_MULTIPLIER) + self::EPOCH_OFFSET_IN_TICKS);
     }
 
     public function ticks()

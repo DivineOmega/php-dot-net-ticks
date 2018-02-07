@@ -54,4 +54,13 @@ class DotNetTicksTest extends TestCase
 
         $this->assertEquals($expected, $carbon);
     }
+
+    public function testCreateFromTimestamp()
+    {
+        $expected = 636536021490000000;
+
+        $ticks = Ticks::createFromTimestamp(1518005349)->ticks();
+
+        $this->assertEquals($expected, $ticks);
+    }
 }

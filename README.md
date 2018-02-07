@@ -1,7 +1,7 @@
 
-# `is_offensive` helper function
+# `php-dot-net-ticks` helper function
 
-[![Build Status](https://travis-ci.org/DivineOmega/is_offensive.svg?branch=master)](https://travis-ci.org/DivineOmega/is_offensive)
-[![Coverage Status](https://coveralls.io/repos/github/DivineOmega/is_offensive/badge.svg?branch=master)](https://coveralls.io/github/DivineOmega/is_offensive?branch=master)
+[![Build Status](https://travis-ci.org/DivineOmega/php-dot-net-ticks.svg?branch=master)](https://travis-ci.org/DivineOmega/php-dot-net-ticks)
+[![Coverage Status](https://coveralls.io/repos/github/DivineOmega/php-dot-net-ticks/badge.svg?branch=master)](https://coveralls.io/github/DivineOmega/php-dot-net-ticks?branch=master)
 
-This PHP package provides an `is_offensive` helper function. Passing a string to `is_offensive` will return a boolean telling you if it contains offensive words.
+

@@ -1,0 +1,25 @@
+{
+    "name": "divineomega/php-dot-net-ticks",
+    "description": "",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jordan Hall",
+            "email": "jordan@hall05.co.uk"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^5.7",
+        "fzaninotto/faker": "^1.6",
+        "satooshi/php-coveralls": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DivineOmega\\DotNetTicks\\": "src/"
+        }
+    },
+    "license": "LGPL-3.0-only",
+    "require": {
+        
+    }
+}

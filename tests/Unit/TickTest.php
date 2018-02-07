@@ -2,10 +2,11 @@
 
 use PHPUnit\Framework\TestCase;
 use DivineOmega\DotNetTicks\Ticks;
+use DateTime;
 
 class DotNetTicksTest extends TestCase
 {
-    public function testConstructionWithCurrentTime()
+    public function testGetTicksFromCurrentTime()
     {
         $expected = (time() * Ticks::TICKS_TIMESTAMP_MULTIPLIER) + Ticks::EPOCH_OFFSET_IN_TICKS;
         $ticks = (new Ticks())->ticks();
@@ -13,7 +14,7 @@ class DotNetTicksTest extends TestCase
         $this->assertEquals($expected, $ticks);
     }
 
-    public function testConstructionWithSpecificTicksValue()
+    public function testGetTicksFromSpecificTicksValue()
     {
         $ticksValue = 636536021491253348;
 
@@ -21,14 +22,6 @@ class DotNetTicksTest extends TestCase
         $ticks = (new Ticks($ticksValue))->ticks();
 
         $this->assertEquals($expected, $ticks);
-    }
-
-    public function testGetTimestampFromCurrentTime()
-    {
-        $expected = time();
-        $timestamp = (new Ticks())->timestamp();
-
-        $this->assertEquals($expected, $timestamp);
     }
 
     public function testGetTimestampFromSpecificTicksValue()
@@ -39,5 +32,15 @@ class DotNetTicksTest extends TestCase
         $timestamp = (new Ticks($ticksValue))->timestamp();
 
         $this->assertEquals($expected, $timestamp);
+    }
+    
+    public function testGetDateTimeFromSpecificTicksValue()
+    {
+        $ticksValue = 636536021491253348;
+
+        $expected = new DateTime('@1518005349');
+        $dateTime = (new Ticks($ticksValue))->datetime();
+
+        $this->assertEquals($expected, $dateTime);
     }
 }

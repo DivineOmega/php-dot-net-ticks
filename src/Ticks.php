@@ -2,6 +2,8 @@
 
 namespace DivineOmega\DotNetTicks;
 
+use DateTime;
+
 class Ticks
 {   
     const EPOCH_OFFSET_IN_TICKS = 621355968000000000;
@@ -32,6 +34,11 @@ class Ticks
     public function timestamp()
     {
         return (($this->ticks - self::EPOCH_OFFSET_IN_TICKS) / self::TICKS_TIMESTAMP_MULTIPLIER);
+    }
+
+    public function dateTime()
+    {
+        return new DateTime('@'.floor($this->timestamp()));
     }
 
 }

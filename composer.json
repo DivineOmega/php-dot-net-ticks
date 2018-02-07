@@ -20,6 +20,6 @@
     },
     "license": "LGPL-3.0-only",
     "require": {
-        
+        "nesbot/carbon": "^1.22"
     }
 }

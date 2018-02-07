@@ -3,6 +3,7 @@
 namespace DivineOmega\DotNetTicks;
 
 use DateTime;
+use Carbon\Carbon;
 
 class Ticks
 {   
@@ -39,6 +40,11 @@ class Ticks
     public function dateTime()
     {
         return new DateTime('@'.floor($this->timestamp()));
+    }
+
+    public function carbon()
+    {
+        return Carbon::createFromTimestampUTC(floor($this->timestamp()));
     }
 
 }

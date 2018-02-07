@@ -3,6 +3,7 @@
 use PHPUnit\Framework\TestCase;
 use DivineOmega\DotNetTicks\Ticks;
 use DateTime;
+use Carbon\Carbon;
 
 class DotNetTicksTest extends TestCase
 {
@@ -42,5 +43,15 @@ class DotNetTicksTest extends TestCase
         $dateTime = (new Ticks($ticksValue))->datetime();
 
         $this->assertEquals($expected, $dateTime);
+    }
+
+    public function testGetCarbonFromSpecificTicksValue()
+    {
+        $ticksValue = 636536021491253348;
+
+        $expected = Carbon::createFromTimestampUTC(1518005349);
+        $carbon = (new Ticks($ticksValue))->carbon();
+
+        $this->assertEquals($expected, $carbon);
     }
 }

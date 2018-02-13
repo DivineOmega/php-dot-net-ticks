@@ -1,9 +1,9 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
-use DivineOmega\DotNetTicks\Ticks;
-use DateTime;
 use Carbon\Carbon;
+use DateTime;
+use DivineOmega\DotNetTicks\Ticks;
+use PHPUnit\Framework\TestCase;
 
 class DotNetTicksTest extends TestCase
 {
@@ -34,7 +34,7 @@ class DotNetTicksTest extends TestCase
 
         $this->assertEquals($expected, $timestamp);
     }
-    
+
     public function testGetDateTimeFromSpecificTicksValue()
     {
         $ticksValue = 636536021491253348;

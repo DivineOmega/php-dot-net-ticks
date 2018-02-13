@@ -2,11 +2,11 @@
 
 namespace DivineOmega\DotNetTicks;
 
-use DateTime;
 use Carbon\Carbon;
+use DateTime;
 
 class Ticks
-{   
+{
     const EPOCH_OFFSET_IN_TICKS = 621355968000000000;
     const TICKS_TIMESTAMP_MULTIPLIER = 10000000;
 
@@ -14,8 +14,9 @@ class Ticks
 
     public function __construct($ticks = null)
     {
-        if ($ticks===null) {
+        if ($ticks === null) {
             $this->ticks = self::currentTimeInTicks();
+
             return;
         }
 
@@ -34,7 +35,7 @@ class Ticks
 
     private static function getTicksFromTimestamp($timestamp)
     {
-        return (($timestamp * self::TICKS_TIMESTAMP_MULTIPLIER) + self::EPOCH_OFFSET_IN_TICKS);
+        return ($timestamp * self::TICKS_TIMESTAMP_MULTIPLIER) + self::EPOCH_OFFSET_IN_TICKS;
     }
 
     public function ticks()
@@ -44,7 +45,7 @@ class Ticks
 
     public function timestamp()
     {
-        return (($this->ticks - self::EPOCH_OFFSET_IN_TICKS) / self::TICKS_TIMESTAMP_MULTIPLIER);
+        return ($this->ticks - self::EPOCH_OFFSET_IN_TICKS) / self::TICKS_TIMESTAMP_MULTIPLIER;
     }
 
     public function dateTime()
@@ -56,5 +57,4 @@ class Ticks
     {
         return Carbon::createFromTimestampUTC(floor($this->timestamp()));
     }
-
 }
